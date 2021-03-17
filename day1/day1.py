@@ -33,12 +33,14 @@ Notes from Bashar:
 2. For every number x we encouter in the list of expneses, we add it to a dictionary as a key.
 3. Suppose we encouter the number y < 2020, where y = 2020 - x. Since x is in our dictionary, we know that x + y = 2020, and we have an answer.
 4. This solution takes O(n) time and O(n) space
+5. The problem stated that this will be a large file of expenses. Using with..as followed by for..in reads the file line by line, without saving it all to memory.
+   This is the optimal way to read the expense report, as we must go through each line at least once in the worst case. 
 """
 
 
 INPUT_FILE = "day1/input.txt"
 
-def find_sum():
+def find_two_sum():
     expense_dict = {}
     with open(INPUT_FILE) as infile:
         for line in infile:
